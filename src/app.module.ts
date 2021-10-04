@@ -16,6 +16,7 @@ const schemaDirectory = join(process.cwd(), 'src/schema.gql');
   imports: [
     GraphQLModule.forRoot({
       autoSchemaFile: schemaDirectory,
+      playground: true,
     }),
     UserModule,
     CommentModule,
