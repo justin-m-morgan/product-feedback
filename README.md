@@ -14,8 +14,9 @@ The Product Feedback challenge is a mock product support page, whereby users can
 <img style="margin-right: 8px;" align="left" alt="React" height="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
 <img style="margin-right: 8px;" align="left" alt="Sass" height="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png" />
 <img style="margin-right: 8px;" align="left" alt="Node.js" height="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />
-<img src="https://nestjs.com/img/logo_text.svg" height="26px" alt="Nest Logo" />
 <img style="margin-right: 8px;" align="left" alt="GraphQL" height="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/graphql/graphql.png" />
+<img src="https://nestjs.com/img/logo_text.svg" height="26px" alt="Nest Logo" />
+
 <br />
 <br />
 
