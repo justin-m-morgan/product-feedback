@@ -1,43 +1,42 @@
-import {
-  Args,
-  Int,
-  Parent,
-  Query,
-  ResolveField,
-  Resolver,
-} from '@nestjs/graphql';
-import { Request } from 'src/request/entities/request.model';
-import { RequestService } from 'src/request/request.service';
-import { Comment } from './entities/comment.model';
+import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { CommentService } from './comment.service';
-import { User } from 'src/user/entitites/user.model';
-import { UserService } from 'src/user/user.service';
+import { Comment } from './entities/comment.entity';
+import { CreateCommentInput } from './dto/create-comment.input';
+import { UpdateCommentInput } from './dto/update-comment.input';
 
-@Resolver((of) => Comment)
+@Resolver(() => Comment)
 export class CommentResolver {
-  constructor(
-    private readonly commentService: CommentService,
-    private readonly requestService: RequestService,
-    private readonly userService: UserService,
-  ) {}
+  constructor(private readonly commentService: CommentService) {}
+
+  @Mutation(() => Comment)
+  createComment(
+    @Args('createCommentInput') createCommentInput: CreateCommentInput,
+  ) {
+    return this.commentService.create(createCommentInput);
+  }
 
   @Query(() => [Comment], { name: 'AllComments' })
-  async findAll() {
+  findAll() {
     return this.commentService.findAll();
   }
 
-  @Query(() => Comment, { name: 'comment' })
-  async findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.commentService.findById(id);
+  @Query(() => Comment, { name: 'Comment' })
+  findOne(@Args('id', { type: () => Int }) id: number) {
+    return this.commentService.findOne(id);
   }
 
-  @ResolveField('request', (returns) => Request)
-  async requests(@Parent() comment: Comment) {
-    return this.requestService.findById(comment.requestId);
+  @Mutation(() => Comment)
+  updateComment(
+    @Args('updateCommentInput') updateCommentInput: UpdateCommentInput,
+  ) {
+    return this.commentService.update(
+      updateCommentInput.id,
+      updateCommentInput,
+    );
   }
 
-  @ResolveField('user', (returns) => User)
-  async findUser(@Parent() comment: Comment) {
-    return this.userService.findById(comment.userId);
+  @Mutation(() => Comment)
+  removeComment(@Args('id', { type: () => Int }) id: number) {
+    return this.commentService.remove(id);
   }
 }

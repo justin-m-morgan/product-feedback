@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ReplyService } from './reply.service';
 import { ReplyResolver } from './reply.resolver';
-import { CommentService } from 'src/comment/comment.service';
-import { UserService } from 'src/user/user.service';
+import { Reply } from './entities/reply.entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [CommentService, UserService],
-  providers: [ReplyResolver, ReplyService, CommentService, UserService],
+  imports: [TypeOrmModule.forFeature([Reply])],
+  providers: [ReplyResolver, ReplyService],
 })
 export class ReplyModule {}

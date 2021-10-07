@@ -1,43 +1,35 @@
-import {
-  Args,
-  Int,
-  Parent,
-  Query,
-  ResolveField,
-  Resolver,
-} from '@nestjs/graphql';
-import { CommentService } from 'src/comment/comment.service';
-import { Comment } from 'src/comment/entities/comment.model';
-import { User } from 'src/user/entitites/user.model';
-import { UserService } from 'src/user/user.service';
-import { Reply } from './reply.model';
+import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { ReplyService } from './reply.service';
+import { Reply } from './entities/reply.entity';
+import { CreateReplyInput } from './dto/create-reply.input';
+import { UpdateReplyInput } from './dto/update-reply.input';
 
-@Resolver((of) => Reply)
+@Resolver(() => Reply)
 export class ReplyResolver {
-  constructor(
-    private readonly replyService: ReplyService,
-    private readonly commentService: CommentService,
-    private readonly userService: UserService,
-  ) {}
+  constructor(private readonly replyService: ReplyService) {}
+
+  @Mutation(() => Reply)
+  createReply(@Args('createReplyInput') createReplyInput: CreateReplyInput) {
+    return this.replyService.create(createReplyInput);
+  }
 
   @Query(() => [Reply], { name: 'AllReplies' })
   findAll() {
     return this.replyService.findAll();
   }
 
-  @Query(() => Reply, { name: 'reply' })
+  @Query(() => Reply, { name: 'Reply' })
   findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.replyService.findById(id);
+    return this.replyService.findOne(id);
   }
 
-  @ResolveField('comment', (returns) => Comment)
-  async requests(@Parent() reply: Reply) {
-    return this.commentService.findById(reply.commentId);
+  @Mutation(() => Reply)
+  updateReply(@Args('updateReplyInput') updateReplyInput: UpdateReplyInput) {
+    return this.replyService.update(updateReplyInput.id, updateReplyInput);
   }
 
-  @ResolveField('user', (returns) => User)
-  async findUser(@Parent() reply: Reply) {
-    return this.userService.findById(reply.userId);
+  @Mutation(() => Reply)
+  removeReply(@Args('id', { type: () => Int }) id: number) {
+    return this.replyService.remove(id);
   }
 }

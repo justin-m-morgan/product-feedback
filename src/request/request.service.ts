@@ -1,36 +1,35 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateRequestInput } from './dto/create-request.input';
 import { UpdateRequestInput } from './dto/update-request.input';
-import requests from './data/requests';
+import { Request } from './entities/request.entity';
 
 @Injectable()
 export class RequestService {
-  private readonly requests = requests;
+  constructor(
+    @InjectRepository(Request)
+    private requestsRepository: Repository<Request>,
+  ) {}
 
-  // create(createRequestInput: CreateRequestInput) {
-  //   return 'This action adds a new request';
-  // }
+  create(createRequestInput: CreateRequestInput) {
+    let request = this.requestsRepository.create(createRequestInput);
+    return this.requestsRepository.save(request);
+  }
 
   findAll() {
-    return this.requests;
-  }
-  findAllById(id) {
-    return this.requests.filter((req) => req.id == id);
+    return this.requestsRepository.find();
   }
 
-  findById(id) {
-    return this.requests.find((request) => request.id == id);
+  findOne(id: number) {
+    return this.requestsRepository.findOne(id);
   }
 
-  // findOne(id: number) {
-  //   return `This action returns a #${id} request`;
-  // }
+  async remove(id: number) {
+    return `This action removes a #${id} request`;
+  }
 
-  // update(id: number, updateRequestInput: UpdateRequestInput) {
-  //   return `This action updates a #${id} request`;
-  // }
-
-  // remove(id: number) {
-  //   return `This action removes a #${id} request`;
-  // }
+  update(id: number, updateRequestInput: UpdateRequestInput) {
+    return `This action updates a #${id} request`;
+  }
 }

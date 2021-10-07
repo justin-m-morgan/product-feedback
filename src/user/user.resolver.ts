@@ -1,42 +1,35 @@
-import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import { Request } from 'src/request/entities/request.model';
-import { RequestService } from 'src/request/request.service';
-import { Upvote } from 'src/upvote/entities/upvote.model';
-import { UpvoteService } from 'src/upvote/upvote.service';
-import { GetUserById } from './dto/get-user.args';
-import { User } from './entitites/user.model';
+import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { UserService } from './user.service';
+import { User } from './entities/user.entity';
+import { CreateUserInput } from './dto/create-user.input';
+import { UpdateUserInput } from './dto/update-user.input';
 
-@Resolver((of) => User)
+@Resolver(() => User)
 export class UserResolver {
-  constructor(
-    private readonly userService: UserService,
-    private readonly requestService: RequestService,
-    private readonly upvoteService: UpvoteService,
-  ) {}
+  constructor(private readonly userService: UserService) {}
 
-  @Query((returns) => User, { name: 'user' })
-  async getUser(@Args() { id }: GetUserById) {
-    return this.userService.findById(id);
+  @Mutation(() => User)
+  createUser(@Args('createUserInput') createUserInput: CreateUserInput) {
+    return this.userService.create(createUserInput);
   }
 
-  @Query((returns) => [User], { name: 'AllUsers' })
-  async getAllUsers() {
+  @Query(() => [User], { name: 'AllUsers' })
+  findAll() {
     return this.userService.findAll();
   }
 
-  @ResolveField()
-  async requests(@Parent() user: User) {
-    return this.requestService.findAllById(user.id);
+  @Query(() => User, { name: 'User' })
+  findOne(@Args('id', { type: () => Int }) id: number) {
+    return this.userService.findOne(id);
   }
 
-  @ResolveField('upvotes', (returns) => [Upvote])
-  async findReqeustUpvotes(@Parent() user: User) {
-    return this.upvoteService.findAllByUser(user.id);
+  @Mutation(() => User)
+  updateUser(@Args('updateUserInput') updateUserInput: UpdateUserInput) {
+    return this.userService.update(updateUserInput.id, updateUserInput);
   }
 
-  // @ResolveField()
-  // async comments(@Parent() user: User) {
-  //   return this.commentService.findAll({ userId: user.id });
-  // }
+  @Mutation(() => User)
+  removeUser(@Args('id', { type: () => Int }) id: number) {
+    return this.userService.remove(id);
+  }
 }

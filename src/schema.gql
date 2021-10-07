@@ -4,30 +4,31 @@
 
 type User {
   id: Int!
-  username: String!
   name: String!
-  image: String
-  requests: [Request!]!
-  upvotes: [Upvote!]!
+  username: String!
+  image: String!
 }
 
 type Request {
   id: Int!
   title: String!
   description: String!
-  status: String!
-  category: String!
+  category: Category!
+  status: Status!
   userId: Int!
-  user: User!
-  upvotes: [Upvote!]!
 }
 
-type Upvote {
-  id: Int!
-  userId: Int!
-  requestId: Int!
-  user: User!
-  request: Request!
+enum Category {
+  Enhancement
+  Feature
+  Bug
+}
+
+enum Status {
+  Suggestion
+  Planned
+  InProgress
+  Live
 }
 
 type Comment {
@@ -35,8 +36,6 @@ type Comment {
   content: String!
   requestId: Int!
   userId: Int!
-  request: Request!
-  user: User!
 }
 
 type Reply {
@@ -44,21 +43,86 @@ type Reply {
   content: String!
   commentId: Int!
   userId: Int!
-  comment: Comment!
-  user: User!
 }
 
 type Query {
-  user(id: Int!): User!
   AllUsers: [User!]!
-  AllComments: [Comment!]!
-  comment(id: Int!): Comment!
-  AllReplies: [Reply!]!
-  reply(id: Int!): Reply!
+  User(id: Int!): User!
   AllRequests: [Request!]!
-  request(id: Int!): Request!
-  AllUpvotes: [Upvote!]!
-  AllUpvotesRequest(requestId: Int!): [Upvote!]!
-  AllUpvotesUser(userId: Int!): [Upvote!]!
-  upvote(id: Int!): Upvote!
+  Request(id: Int!): Request!
+  AllComments: [Comment!]!
+  Comment(id: Int!): Comment!
+  AllReplies: [Reply!]!
+  Reply(id: Int!): Reply!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
+  createRequest(createRequestInput: CreateRequestInput!): Request!
+  updateRequest(updateRequestInput: UpdateRequestInput!): Request!
+  removeRequest(id: Int!): Request!
+  createComment(createCommentInput: CreateCommentInput!): Comment!
+  updateComment(updateCommentInput: UpdateCommentInput!): Comment!
+  removeComment(id: Int!): Comment!
+  createReply(createReplyInput: CreateReplyInput!): Reply!
+  updateReply(updateReplyInput: UpdateReplyInput!): Reply!
+  removeReply(id: Int!): Reply!
+}
+
+input CreateUserInput {
+  name: String!
+  username: String!
+  image: String!
+}
+
+input UpdateUserInput {
+  name: String!
+  username: String!
+  image: String!
+  id: Int!
+}
+
+input CreateRequestInput {
+  title: String!
+  description: String!
+  category: Category!
+  status: Status!
+  userId: Int!
+}
+
+input UpdateRequestInput {
+  title: String!
+  description: String!
+  category: Category!
+  status: Status!
+  userId: Int
+  id: Int!
+}
+
+input CreateCommentInput {
+  content: String!
+  requestId: Int!
+  userId: Int!
+}
+
+input UpdateCommentInput {
+  content: String!
+  requestId: Int
+  userId: Int
+  id: Int!
+}
+
+input CreateReplyInput {
+  content: String!
+  commentId: Int!
+  userId: Int!
+}
+
+input UpdateReplyInput {
+  content: String!
+  commentId: Int
+  userId: Int
+  id: Int!
 }

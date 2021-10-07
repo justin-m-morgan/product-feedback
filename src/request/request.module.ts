@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { RequestService } from './request.service';
 import { RequestResolver } from './request.resolver';
-import { UserService } from 'src/user/user.service';
-import { UpvoteService } from 'src/upvote/upvote.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Request } from './entities/request.entity';
 
 @Module({
-  imports: [UserService, UpvoteService],
-  providers: [RequestResolver, RequestService, UserService, UpvoteService],
+  imports: [TypeOrmModule.forFeature([Request])],
+  providers: [RequestResolver, RequestService],
 })
 export class RequestModule {}
