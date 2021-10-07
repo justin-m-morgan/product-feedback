@@ -1,0 +1,13 @@
+category,description,id,userId,status,title
+Enhancement,Easier to search for solutions based on a specific stack.,1,4,Suggestion,Add tags for solutions
+Feature,It would help people with light sensitivities and who prefer dark mode.,2,1,Suggestion,Add a dark theme option
+Feature,Challenge-specific Q&A would make for easy reference.,3,9,Suggestion,Q&A within the challenge hubs
+Enhancement,Images and screencasts can enhance comments on solutions.,4,11,Suggestion,Add image
+Feature,Stay updated on comments and solutions other people post.,5,3,Suggestion,Ability to follow others
+Bug,Challenge preview images are missing when you apply a filter.,6,1,Suggestion,Preview images not loading
+Feature,It would be great to see a more detailed breakdown of solutions.,7,8,Planned,More comprehensive reports
+Feature,Sequenced projects for different goals to help people improve.,8,1,Planned,Learning paths
+Feature,Add ability to create professional looking portfolio from profile.,9,12,In Progress,One-click portfolio generation
+Feature,Be able to bookmark challenges to take later on.,10,6,In Progress,Bookmark challenges
+Bug,Screenshots of solutions with animations don’t display correctly.,11,9,In Progress,Animated solution screenshots
+Enhancement,Small animations at specific points can add delight.,12,2,Live,Add micro-interactions
