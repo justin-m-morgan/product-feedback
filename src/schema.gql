@@ -2,11 +2,13 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type User {
+type Reply {
   id: Int!
-  name: String!
-  username: String!
-  image: String!
+  content: String!
+  commentId: Int!
+  comment: Comment!
+  userId: Int!
+  user: User!
 }
 
 type Request {
@@ -16,6 +18,8 @@ type Request {
   category: Category!
   status: Status!
   userId: Int!
+  user: User!
+  comments: [Comment!]!
 }
 
 enum Category {
@@ -35,14 +39,20 @@ type Comment {
   id: Int!
   content: String!
   requestId: Int!
+  request: Request!
   userId: Int!
+  user: User!
+  replies: [Reply!]!
 }
 
-type Reply {
+type User {
   id: Int!
-  content: String!
-  commentId: Int!
-  userId: Int!
+  name: String!
+  username: String!
+  image: String!
+  requests: [Request!]!
+  comments: [Comment!]!
+  replies: [Reply!]!
 }
 
 type Query {
