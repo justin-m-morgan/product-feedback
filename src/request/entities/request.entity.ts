@@ -1,5 +1,13 @@
 import { ObjectType, Field, Int, registerEnumType } from '@nestjs/graphql';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Comment } from '../../comment/entities/comment.entity';
+import { User } from '../../user/entities/user.entity';
 
 export enum Category {
   Enhancement = 'Enhancement',
@@ -47,4 +55,12 @@ export class Request {
   @Field(() => Int)
   @Column()
   userId: number;
+
+  @Field(() => User)
+  @ManyToOne(() => User, (user) => user.requests)
+  user: User;
+
+  @Field(() => [Comment])
+  @OneToMany((type) => Comment, (comment) => comment.request)
+  comments: Comment[];
 }

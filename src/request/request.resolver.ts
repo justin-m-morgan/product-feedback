@@ -1,12 +1,26 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import {
+  Resolver,
+  Query,
+  Mutation,
+  Args,
+  Int,
+  Parent,
+  ResolveField,
+} from '@nestjs/graphql';
 import { RequestService } from './request.service';
 import { Request } from './entities/request.entity';
 import { CreateRequestInput } from './dto/create-request.input';
 import { UpdateRequestInput } from './dto/update-request.input';
+import { CommentService } from '../comment/comment.service';
+import { User } from '../user/entities/user.entity';
+import { Comment } from '../comment/entities/comment.entity';
 
 @Resolver(() => Request)
 export class RequestResolver {
-  constructor(private readonly requestService: RequestService) {}
+  constructor(
+    private readonly requestService: RequestService,
+    private readonly commentService: CommentService,
+  ) {}
 
   @Mutation(() => Request)
   createRequest(
@@ -38,5 +52,10 @@ export class RequestResolver {
   @Mutation(() => Request)
   removeRequest(@Args('id', { type: () => Int }) id: number) {
     return this.requestService.remove(id);
+  }
+
+  @ResolveField(() => [Comment])
+  async comments(@Parent() request: Request) {
+    return this.commentService.findAll({ where: { requestId: request.id } });
   }
 }

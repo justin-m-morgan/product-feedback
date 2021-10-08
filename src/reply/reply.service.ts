@@ -16,12 +16,23 @@ export class ReplyService {
     return this.repliesRepository.save(reply);
   }
 
-  findAll() {
-    return this.repliesRepository.find();
+  findAll(opts = {}) {
+    return this.repliesRepository.find({
+      ...opts,
+      relations: [
+        'comment',
+        'comment.user',
+        'comment.request',
+        'comment.request.user',
+        'user',
+      ],
+    });
   }
 
   findOne(id: number) {
-    return this.repliesRepository.findOne(id);
+    return this.repliesRepository.findOne(id, {
+      relations: ['comment', 'user'],
+    });
   }
 
   update(id: number, updateReplyInput: UpdateReplyInput) {

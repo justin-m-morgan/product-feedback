@@ -16,12 +16,17 @@ export class CommentService {
     return this.commentsRepository.save(comment);
   }
 
-  findAll() {
-    return this.commentsRepository.find();
+  findAll(opts = {}) {
+    return this.commentsRepository.find({
+      ...opts,
+      relations: ['request', 'request.user', 'user'],
+    });
   }
 
   findOne(id: number) {
-    return this.commentsRepository.findOne(id);
+    return this.commentsRepository.findOne(id, {
+      relations: ['request', 'user'],
+    });
   }
 
   update(id: number, updateCommentInput: UpdateCommentInput) {

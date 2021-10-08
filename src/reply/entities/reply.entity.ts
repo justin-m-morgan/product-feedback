@@ -1,5 +1,7 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Comment } from '../../comment/entities/comment.entity';
+import { User } from '../../user/entities/user.entity';
 
 @ObjectType()
 @Entity()
@@ -16,7 +18,15 @@ export class Reply {
   @Column()
   commentId: number;
 
+  @Field((type) => Comment)
+  @ManyToOne((type) => Comment, (comment) => comment.replies)
+  comment: Comment;
+
   @Field((type) => Int)
   @Column()
   userId: number;
+
+  @Field((type) => User)
+  @ManyToOne((type) => User, (user) => user.replies)
+  user: User;
 }

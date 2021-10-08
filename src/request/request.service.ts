@@ -17,12 +17,12 @@ export class RequestService {
     return this.requestsRepository.save(request);
   }
 
-  findAll() {
-    return this.requestsRepository.find();
+  findAll(opts = {}) {
+    return this.requestsRepository.find({ ...opts, relations: ['user'] });
   }
 
   findOne(id: number) {
-    return this.requestsRepository.findOne(id);
+    return this.requestsRepository.findOne(id, { relations: ['user'] });
   }
 
   async remove(id: number) {
