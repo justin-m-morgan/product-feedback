@@ -18,11 +18,11 @@ export class RequestService {
   }
 
   findAll(opts = {}) {
-    return this.requestsRepository.find({ ...opts, relations: ['user'] });
+    return this.requestsRepository.find({ ...opts, relations: ['user', 'upvotes'] });
   }
 
   findOne(id: number) {
-    return this.requestsRepository.findOne(id, { relations: ['user'] });
+    return this.requestsRepository.findOne(id, { relations: ['user', 'upvotes'] });
   }
 
   async remove(id: number) {

@@ -20,11 +20,6 @@ export class UserResolver {
     private readonly requestService: RequestService,
   ) {}
 
-  @Mutation(() => User)
-  createUser(@Args('createUserInput') createUserInput: CreateUserInput) {
-    return this.userService.create(createUserInput);
-  }
-
   @Query(() => [User], { name: 'AllUsers' })
   findAll() {
     return this.userService.findAll();
@@ -36,14 +31,19 @@ export class UserResolver {
   }
 
   @Mutation(() => User)
+  createUser(@Args('createUserInput') createUserInput: CreateUserInput) {
+    return this.userService.create(createUserInput);
+  }
+
+  @Mutation(() => User)
   updateUser(@Args('updateUserInput') updateUserInput: UpdateUserInput) {
     return this.userService.update(updateUserInput.id, updateUserInput);
   }
 
-  @Mutation(() => User)
-  removeUser(@Args('id', { type: () => Int }) id: number) {
-    return this.userService.remove(id);
-  }
+  // @Mutation(() => User)
+  // removeUser(@Args('id', { type: () => Int }) id: number) {
+  //   return this.userService.remove(id);
+  // }
 
   @ResolveField(() => [Request])
   async requests(@Parent() user: User) {

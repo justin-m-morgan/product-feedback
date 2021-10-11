@@ -2,6 +2,7 @@ import { ObjectType, Field, Int, registerEnumType } from '@nestjs/graphql';
 import {
   Column,
   Entity,
+  ManyToMany,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -63,4 +64,8 @@ export class Request {
   @Field(() => [Comment])
   @OneToMany((type) => Comment, (comment) => comment.request)
   comments: Comment[];
+
+  @Field((type) => [User], { nullable: true })
+  @ManyToMany((type) => User, (user) => user.upvotes, { eager: true })
+  upvotes: User[];
 }

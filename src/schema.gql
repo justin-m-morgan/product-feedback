@@ -20,6 +20,7 @@ type Request {
   userId: Int!
   user: User!
   comments: [Comment!]!
+  upvotes: [User!]
 }
 
 enum Category {
@@ -53,6 +54,7 @@ type User {
   requests: [Request!]!
   comments: [Comment!]!
   replies: [Reply!]!
+  upvotes: [Request!]
 }
 
 type Query {
@@ -69,7 +71,6 @@ type Query {
 type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
-  removeUser(id: Int!): User!
   createRequest(createRequestInput: CreateRequestInput!): Request!
   updateRequest(updateRequestInput: UpdateRequestInput!): Request!
   removeRequest(id: Int!): Request!
@@ -88,9 +89,9 @@ input CreateUserInput {
 }
 
 input UpdateUserInput {
-  name: String!
-  username: String!
-  image: String!
+  name: String
+  username: String
+  image: String
   id: Int!
 }
 

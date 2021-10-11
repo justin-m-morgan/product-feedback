@@ -11,13 +11,14 @@ import { RequestModule } from './request/request.module';
 import { CommentModule } from './comment/comment.module';
 import { ReplyModule } from './reply/reply.module';
 
-import { pgConfig } from '../ormconfig';
+
+
 
 const schemaDirectory = join(process.cwd(), 'src/schema.gql');
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(pgConfig),
+    TypeOrmModule.forRoot(),
     GraphQLModule.forRoot({
       autoSchemaFile: schemaDirectory,
       playground: true,
