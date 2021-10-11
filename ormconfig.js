@@ -16,6 +16,10 @@ if (process.env.NODE_ENV === 'production') {
     password: process.env.DB_PASSWORD,
     port: 5432,
     database: process.env.DB_DATABASE,
+    ssl:
+      process.env.NODE_ENV === 'production'
+        ? { rejectUnauthorized: false }
+        : false,
   };
 } else {
   module.exports = {
