@@ -1,10 +1,10 @@
 const baseConfig = {
   type: 'postgres',
-  entities: ['dist/src/**/*.entity.js'],
+  entities: ['dist/**/*.entity.js'],
   synchronize: false,
-  migrations: ['dist/src/database/migrations/*.js'],
+  migrations: ['dist/database/migrations/*.js'],
   cli: {
-    migrationsDir: 'src/database/migrations',
+    migrationsDir: 'dist/database/migrations',
   },
 };
 
