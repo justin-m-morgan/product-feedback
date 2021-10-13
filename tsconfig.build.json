@@ -5,6 +5,7 @@
     "test",
     "dist",
     "db",
-    "**/*spec.ts"
+    "**/*spec.ts",
+    "frontend"
   ]
 }
