@@ -4,13 +4,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "netlify:deploy:prod": "netlify deploy --prod",
+    "netlify:deploy:staging": "netlify deploy"
   },
   "dependencies": {
     "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "netlify:deploy:prod": "netlify deploy --prod",
-    "netlify:deploy:staging": "netlify deploy"
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
