@@ -1,13 +1,24 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --colors-purple--hsl: hsl(282, 83%, 52%);
+    --colors-purple--rgb: rgb(173, 31, 234);
+    --colors-blue-300--hsl: hsl(204, 94%, 68%);
+    --colors-blue-300--rgb: rgb(98, 188, 250);
+    --colors-blue-500--hsl: hsl(230, 76%, 59%);
+    --colors-blue-500--rgb: rgb(70, 97, 230);
+    --colors-blue-800--hsl: hsl(230, 31%, 31%);
+    --colors-blue-800--rgb: rgb(55, 63, 104);
+    --colors-blue-800--accent--hsl: hsl(231, 33%, 34%);
+    --colors-blue-800--accent--rgb: rgb(58, 67, 116);
+    --colors-peach--hsl: hsl(14, 83%, 74%);
+    --colors-peach--rgb: rgb(244, 159, 133);
+    --colors-white--hsl: hsl(0, 0%, 100%);
+    --colors-white--rgb: rgb(255, 255, 255);
+    --colors-black--hsl: hsl(0, 0%, 10%);
+    --colors-black--rgb: rgb(26, 26, 26);
+    --colors-grey-100--hsl: hsl(231, 100%, 97%);
+    --colors-grey-100--rgb: rgb(242, 244, 255);
+    --colors-grey-100--acent--hsl: hsl(230, 60%, 98%);
+    --colors-grey-100--accent--rgb: rgb(247, 248, 253);
+    --colors-grey-800--hsl: hsl(224, 20%, 49%);
+    --colors-grey-800--rgb: rgb(100, 113, 150);
 }
