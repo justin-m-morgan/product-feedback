@@ -1,0 +1,62 @@
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.625rem;
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: var(--colors-white--hsl);
+  background-color: var(--button--normal, var(--colors-purple--hsl), black);
+  transition: var(--trans-background);
+}
+.button:hover {
+    background-color: var(--button--hover), var(--colors-purple--accent--hsl), hsl(0, 0, 25%);
+}
+
+.purple {
+  background-color: var(--colors-purple--hsl);
+}
+.purple:hover {
+  background-color: var(--colors-purple--accent--hsl);
+}
+.red {
+  background-color: var(--colors-red--hsl);
+}
+.red:hover {
+  background-color: var(--colors-red--accent--hsl);
+}
+
+.blue {
+  background-color: var(--colors-blue-500--hsl);
+}
+.blue:hover {
+  background-color: var(--colors-blue-500--accent--hsl);
+}
+
+.blue {
+  background-color: var(--colors-blue-500--hsl);
+}
+.blue:hover {
+  background-color: var(--colors-blue-500--accent--hsl);
+}
+
+.blue {
+  background-color: var(--colors-blue-500--hsl);
+}
+.blue:hover {
+  background-color: var(--colors-blue-500--accent--hsl);
+}
+
+.navy {
+  background-color: var(--colors-blue-800--hsl);
+}
+.navy:hover {
+  background-color: var(--colors-grey-800--hsl);
+}
+
+.ghost {
+    color: var(--colors-black--hsl);
+  background-color:transparent;
+}
+.ghost:hover {
+  background-color:transparent;
+}
