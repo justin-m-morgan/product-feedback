@@ -1,0 +1,20 @@
+:root {
+    --colors-red--hsl: hsl(0, 66.7%, 52.9%);
+    --colors-red--accent--hsl: hsl(0, 68.8%, 72.4%);
+    --colors-purple--hsl: hsl(282, 83%, 52%);
+    --colors-purple--accent--hsl: hsl(281.9, 89.7%, 65.9%);
+    --colors-blue-100--hsl: hsl(230, 100%, 90.6%);
+    --colors-blue-300--hsl: hsl(204, 94%, 68%);
+    --colors-blue-500--hsl: hsl(230, 76%, 59%);
+    --colors-blue-500--accent--hsl: hsl(229.9, 91.2%, 73.1%);
+    --colors-blue-800--hsl: hsl(230, 31%, 31%);
+    --colors-blue-800--accent--hsl: hsl(231, 33%, 34%);
+    --colors-peach--hsl: hsl(14, 83%, 74%);
+    --colors-white--hsl: hsl(0, 0%, 100%);
+    --colors-black--hsl: hsl(0, 0%, 10%);
+    --colors-grey-100--hsl: hsl(231, 100%, 97%);
+    --colors-grey-100--acent--hsl: hsl(230, 60%, 98%);
+    --colors-grey-800--hsl: hsl(224, 20%, 49%);
+    --colors-grey-900--hsl: hsl(230.7, 33.3%, 34.1%);
+}
+
