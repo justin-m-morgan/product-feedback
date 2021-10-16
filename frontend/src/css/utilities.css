@@ -1,0 +1,16 @@
+.rotate-cw {
+    transform: rotate(90deg);
+}
+.rotate-ccw {
+    transform: rotate(270deg);
+}
+.rotate-half {
+    transform: rotate(180deg);
+}
+
+.hide { 
+    visibility: hidden;
+    opacity: 0;
+    
+}
+

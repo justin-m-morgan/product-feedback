@@ -1,0 +1,18 @@
+input, select, .input {
+    background-color: var(--colors-grey-100--hsl);
+    padding: 0.8125rem 1.5rem;
+    border-radius: 0.3125rem;
+    outline-width: 1px;
+    outline-style: inset;
+    outline-color: transparent;
+}
+
+
+
+input:active, input:focus {
+    outline-color: var(--colors-blue-500--hsl);
+}
+
+input.error {
+    outline-color: var(--colors-red--hsl);
+}

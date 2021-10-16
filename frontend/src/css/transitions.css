@@ -1,0 +1,5 @@
+:root {
+    --trans-background: 300ms background-color ease-in-out;
+    --trans-fade: 300ms all ease-in-out;
+}
+

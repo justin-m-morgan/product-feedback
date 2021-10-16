@@ -1,0 +1,26 @@
+.badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--colors-blue-500--hsl);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    background-color: var(--colors-grey-100--hsl);
+    padding: 0.4rem 1rem;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    transition: var(--trans-background);
+}
+
+.badge:hover { 
+    background-color: var(--colors-blue-100--hsl);
+}
+
+.active {
+    background-color: var(--colors-blue-500--hsl);
+    color: var(--colors-white--hsl);
+}
+.active:hover {
+    background-color: var(--colors-blue-500--accent--hsl);
+}

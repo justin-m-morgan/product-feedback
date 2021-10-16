@@ -1,0 +1,13 @@
+.stack {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+}
+
+.digits {
+    color: var(--colors-blue-800--hsl)
+}
+
+.digits.active {
+    color: var(--colors-white--hsl)
+}
