@@ -1,13 +1,22 @@
+.sortselector__container {
+    position: relative;
+}
+.sortselector__container fieldset {
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: var(--colors-grey-900--hsl)
+}
+
 .sortbutton {
     background-color: var(--colors-blue-800--hsl);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.625rem 1.1rem;
+    padding: 1rem 1.1rem;
     border-radius: 0.625rem;
     color: var(--colors-white--hsl);
     cursor: pointer;
-    margin-bottom: 1rem;
 }
 
 .sortbutton__label {

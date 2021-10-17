@@ -5,8 +5,7 @@
     gap: 2px;
     background-color: var(--colors-grey-100--hsl);
     box-shadow: var(--shadow-md);
-    transition: var(--trans-fade);
-    
+    transition: var(--trans-fade);  
 }
 .options input[type="radio"] {
     display: none;
