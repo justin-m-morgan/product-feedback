@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import SuggestionsEmptyState from './SuggestionsEmptyState';
 export default {
-  title: 'Elements/SuggestionsEmptyState',
+  title: 'Elements/Suggestions (Empty State)',
   component: SuggestionsEmptyState,
 } as ComponentMeta<typeof SuggestionsEmptyState>;
 

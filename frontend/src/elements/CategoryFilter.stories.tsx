@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import CategoryFilter, { Category } from './CategoryFilter';
 
 export default {
-  title: 'Elements/CategoryFilter',
+  title: 'Elements/Category Filter',
   component: CategoryFilter,
 } as ComponentMeta<typeof CategoryFilter>;
 
