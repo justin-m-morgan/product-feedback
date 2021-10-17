@@ -10,7 +10,7 @@ import SelectOptions, {
 const cx = classnames.bind(style);
 
 
-type SortOption =
+export type SortOption =
   | 'Most Upvotes'
   | 'Least Upvotes'
   | 'Most Comments'
