@@ -6,21 +6,33 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "netlify:deploy:prod": "netlify deploy --prod",
-    "netlify:deploy:staging": "netlify deploy"
+    "netlify:deploy:staging": "netlify deploy",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@fontsource/jost": "^4.5.0",
+    "classnames": "^2.3.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/react": "^6.3.12",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react": "^1.0.0",
     "autoprefixer": "^10.3.7",
+    "babel-loader": "^8.2.2",
     "postcss-import": "^14.0.2",
     "postcss-media-variables": "^2.0.1",
     "postcss-nested": "^5.0.6",
     "typescript": "^4.3.2",
-    "vite": "^2.6.4"
+    "vite": "^2.6.4",
+    "vite-plugin-react-svg": "^0.2.0"
   }
 }

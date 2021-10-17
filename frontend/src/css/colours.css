@@ -10,6 +10,7 @@
     --colors-blue-800--hsl: hsl(230, 31%, 31%);
     --colors-blue-800--accent--hsl: hsl(231, 33%, 34%);
     --colors-peach--hsl: hsl(14, 83%, 74%);
+    --colors-green--hsl: hsl(100, 83%, 54%);
     --colors-white--hsl: hsl(0, 0%, 100%);
     --colors-black--hsl: hsl(0, 0%, 10%);
     --colors-grey-100--hsl: hsl(231, 100%, 97%);
@@ -18,4 +19,3 @@
     --colors-grey-900--hsl: hsl(230.7, 33.3%, 34.1%);
     --shadow-md: 0 0.625rem 2.5rem -0.4375rem rgb(55, 63, 104, 0.35);
 }
-

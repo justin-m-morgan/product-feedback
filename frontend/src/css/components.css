@@ -1,0 +1,8 @@
+.card {
+    background-color: var(--colors-white--hsl);
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    border-radius: 0.625rem; 
+}
