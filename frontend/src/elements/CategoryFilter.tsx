@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './CategoryFilter.module.css';
 import classnames from 'classnames';
-// import { Category } from '../../../src/request/entities/request.entity';
 import Badge from '../ui/Badge';
 
 const cx = classnames.bind(style);

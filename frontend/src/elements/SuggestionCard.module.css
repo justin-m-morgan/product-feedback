@@ -1,0 +1,33 @@
+.suggestioncard__container {
+    display: grid; 
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column dense;
+    
+}
+
+.suggestioncard__upvote {
+    grid-row: 1 / -1;
+}
+.suggestioncard__comments {
+    grid-row: 1 / -1;
+    align-self: center;
+    text-align: right;
+    font-weight: bold;
+}
+.suggestioncard__comments.zero {
+    color: var(--colors-grey-500--hsl);
+}
+
+.suggestioncard__comments::before {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    content: url(../../assets/shared/icon-comments.svg);
+    padding-right: 0.5rem;
+    
+}
+
+.suggestioncard__description {
+    color: var(--colors-grey-800--hsl);
+}
