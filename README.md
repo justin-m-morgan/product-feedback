@@ -1,7 +1,3 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
-
 This is a completion of the [Frontend Mentors](https://frontendmentors.io) "Product Feedback" challenge.
 
 Backend Server (Live): [Heroku](https://fem-product-feedback.herokuapp.com/graphql)
