@@ -9,21 +9,26 @@ import SelectOptions, {
 
 const cx = classnames.bind(style);
 
-interface SortOptions {
-  [key: string]: string;
-}
-const sortOptions: SortOptions = {
-  MostUpvotes: 'Most Upvotes',
-  LeastUpvotes: 'Least Upvotes',
-  MostComments: 'Most Comments',
-  LeastComments: 'Least Comments',
-};
+
+type SortOption =
+  | 'Most Upvotes'
+  | 'Least Upvotes'
+  | 'Most Comments'
+  | 'Least Comments';
+
+export const sortOptions: SortOption[] = [
+  'Most Upvotes',
+  'Least Upvotes',
+  'Most Comments',
+  'Least Comments',
+];
 
 interface SortSelectorProps {
   /**
    * Currently selected Sort option
    */
-  currentSelection: string;
+  currentSelection: SortOption;
+
   /**
    * Field name for grouping values
    */
@@ -38,8 +43,8 @@ interface SortSelectorProps {
   handleChange: () => void;
 }
 function SortSelector({
-  currentSelection = sortOptions.MostComments,
-  fieldName = 'default',
+  currentSelection,
+  fieldName,
   active = false,
   handleChange = () => {},
 }: SortSelectorProps) {
@@ -52,7 +57,7 @@ function SortSelector({
   };
 
   return (
-    <div>
+    <div className={cx('sortselector__container')}>
       <button className={cx('sortbutton')} onClick={toggleActive}>
         <span className={cx('sortbutton__label')}>Sort by:</span>
         <span className={cx('sortbutton__option')}>{currentSelection}</span>
@@ -60,7 +65,7 @@ function SortSelector({
       </button>
       <SelectOptions
         fieldName={fieldName}
-        options={optionTransformer(sortOptions)}
+        options={sortOptions.map((o) => ({ value: o, label: o }))}
         hidden={!isActive}
         handleClick={handleClick}
       />
@@ -68,18 +73,5 @@ function SortSelector({
   );
 }
 
-function selectOptionTransformer(
-  sortOptions: SortOptions,
-  fieldName: string,
-): SelectOptionProps {
-  return {
-    options: optionTransformer(sortOptions),
-    fieldName,
-  };
-}
-
-function optionTransformer(options: SortOptions): Option[] {
-  return Object.entries(options).map(([value, label]) => ({ value, label }));
-}
 
 export default SortSelector;

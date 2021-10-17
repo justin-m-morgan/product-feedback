@@ -29,15 +29,16 @@ function SelectOption({
       })}
     >
       {options.map(({ value, label }) => (
-        <>
+        <React.Fragment key={value}>
           <input id={value} name={fieldName} value={value} type="radio" />
           <label htmlFor={value} className={cx('option')} onClick={handleClick}>
             {label}
           </label>
-        </>
+        </React.Fragment>
       ))}
     </fieldset>
   );
 }
+
 
 export default SelectOption;

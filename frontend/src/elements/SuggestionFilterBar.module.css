@@ -1,0 +1,15 @@
+.filterbar {
+    background-color: var(--colors-blue-800--hsl);
+    color: var(--colors-white--hsl);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.count {
+    margin-right: 1.5rem;
+}
+
+.filterbar > *:last-child {
+    margin-left: auto;
+}
