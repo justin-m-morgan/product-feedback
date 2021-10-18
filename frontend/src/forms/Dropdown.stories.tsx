@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args} />
+  <div className="card">
+    <Dropdown {...args} />
+  </div>
 );
 
 export const Primary = Template.bind({});

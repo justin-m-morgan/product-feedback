@@ -15,7 +15,7 @@ interface DotProps {
 }
 function Dot({ height }: DotProps) {
   return (
-    <svg className={cx('dot')} height={height} viewBox="0 0 10 10">
+    <svg className={cx('roadmap__dot')} height={height} viewBox="0 0 10 10">
       <circle cx="5" cy="5" r="5" />
     </svg>
   );
@@ -25,19 +25,21 @@ interface RoadmapProps {}
 function Roadmap({}: RoadmapProps) {
   return (
     <div className={cx('card', 'roadmap')}>
-      <h3 className="h3">Roadmap</h3>
-      <a href="/" className={cx('link')}>
-        View
-      </a>
+      <div className={cx('roadmap__heading')}>
+        <h3 className="h3">Roadmap</h3>
+        <a href="/" className={cx('roadmap__link')}>
+          View
+        </a>
+      </div>
       {Object.entries(Status).map(([key, value]) => (
-        <React.Fragment key={key}>
-          <div className={cx('entry')}>
+        <div className={cx('roadmap__entry')} key={key}>
+          <div>
             <Dot height="0.625rem" />
             <span>{value}</span>
           </div>
 
-          <span className={cx('count')}>{1}</span>
-        </React.Fragment>
+          <span className={cx('roadmap__count')}>{1}</span>
+        </div>
       ))}
     </div>
   );

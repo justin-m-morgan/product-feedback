@@ -34,7 +34,7 @@ function Dropdown({
   };
 
   return (
-    <div className={cx('container')}>
+    <div className={cx('dropdown__container')}>
       <button className={cx('input', 'dropdown')} onClick={toggleActive}>
         {currentSelection}
       </button>
