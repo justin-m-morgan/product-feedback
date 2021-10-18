@@ -31,6 +31,7 @@
     "postcss-import": "^14.0.2",
     "postcss-media-variables": "^2.0.1",
     "postcss-nested": "^5.0.6",
+    "storybook-css-modules-preset": "^1.1.1",
     "typescript": "^4.3.2",
     "vite": "^2.6.4",
     "vite-plugin-react-svg": "^0.2.0"
