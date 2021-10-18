@@ -1,9 +1,9 @@
-.dropdown__container {
+.container {
     position: relative;
     display: block;
 }
 
-.dropdown__container .options {
+.container .options {
     position: relative;
     width: 100%;
     top: 1rem;

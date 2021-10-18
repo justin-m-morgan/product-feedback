@@ -3,7 +3,6 @@ import style from './CategoryFilter.module.css';
 import classnames from 'classnames';
 import Badge from '../ui/Badge';
 
-const cx = classnames.bind(style);
 
 export enum Category {
   All = 'All',
@@ -17,9 +16,11 @@ interface CategoryFilterProps {
 }
 function CategoryFilter({ active }: CategoryFilterProps) {
   return (
-    <div className={cx('card', 'categoryfilter__container')}>
+    <div className={classnames('card', style.container)}>
       {Object.entries(Category).map(([key, value]) => (
-        <Badge active={key == active}>{value}</Badge>
+        <Badge key={key} active={key == active}>
+          {value}
+        </Badge>
       ))}
     </div>
   );

@@ -4,23 +4,21 @@ import Button from '../ui/Button';
 import Plus from '../svg/Plus';
 
 import emptyImg from '../../assets/suggestions/illustration-empty.svg';
-import classNames from 'classnames';
-
-const cx = classNames.bind(style);
+import classnames from 'classnames';
 
 interface SuggestionsEmptyStateProps {}
 function SuggestionsEmptyState({}: SuggestionsEmptyStateProps) {
   return (
-    <div className={cx('card', 'emptystate__container')}>
+    <div className={classnames('card', style.container)}>
       <img
         src={emptyImg}
         alt="Sleuth character illustration"
-        className={cx('emptystate__illustration')}
+        className={classnames(style.illustration)}
       />
-      <p className={cx('h1', 'emptystate__pseudoheading')}>
+      <p className={classnames('h1', style.pseudoheading)}>
         There is no feedback yet.
       </p>
-      <p className={cx('emptystate__text')}>
+      <p className={classnames(style.text)}>
         Got a suggestion? Found a bug that needs to be squashed? We love hearing
         about new ideas to improve our app.
       </p>

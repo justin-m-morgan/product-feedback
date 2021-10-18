@@ -3,7 +3,6 @@ import classnames from 'classnames';
 
 import styles from './SelectOptions.module.css';
 
-const cx = classnames.bind(styles);
 
 export interface Option {
   label: string;
@@ -24,14 +23,18 @@ function SelectOption({
 }: SelectOptionProps) {
   return (
     <fieldset
-      className={cx('options', {
+      className={classnames(styles.options, {
         hide: hidden,
       })}
     >
       {options.map(({ value, label }) => (
         <React.Fragment key={value}>
           <input id={value} name={fieldName} value={value} type="radio" />
-          <label htmlFor={value} className={cx('option')} onClick={handleClick}>
+          <label
+            htmlFor={value}
+            className={classnames(styles.option)}
+            onClick={handleClick}
+          >
             {label}
           </label>
         </React.Fragment>

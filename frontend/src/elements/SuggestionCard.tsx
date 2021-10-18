@@ -5,7 +5,6 @@ import CountBadge from '../ui/CountBadge';
 import { Category } from './CategoryFilter';
 import Badge from '../ui/Badge';
 
-const cx = classnames.bind(style);
 
 interface SuggestionCardProps {
   title: string;
@@ -22,18 +21,16 @@ function SuggestionCard({
   category,
 }: SuggestionCardProps) {
   return (
-    <div className={cx('card', 'suggestioncard__container')}>
-      <div className={cx('suggestioncard__upvote')}>
+    <div className={classnames('card', style.container)}>
+      <div className={classnames(style.upvote)}>
         <CountBadge count={upvoteCount} />
       </div>
-      <h3 className={cx('h3', 'suggestioncard__title')}>{title}</h3>
-      <p className={cx('body', 'suggestioncard__description')}>{description}</p>
-      <div className={cx('suggestioncard__category')}>
+      <h3 className={classnames('h3', style.title)}>{title}</h3>
+      <p className={classnames('body', style.description)}>{description}</p>
+      <div className={classnames(style.category)}>
         <Badge>{Category[category]}</Badge>
       </div>
-      <div
-        className={cx('suggestioncard__comments', { zero: commentCount == 0 })}
-      >
+      <div className={classnames(style.comments, { zero: commentCount == 0 })}>
         {commentCount}
       </div>
     </div>

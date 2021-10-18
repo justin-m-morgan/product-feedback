@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 
-import styles from './Dropdown.module.css';
+import style from './Dropdown.module.css';
 import SelectOptions from './SelectOptions';
-
-const cx = classnames.bind(styles);
 
 interface Option {
   label: string;
@@ -34,8 +32,11 @@ function Dropdown({
   };
 
   return (
-    <div className={cx('dropdown__container')}>
-      <button className={cx('input', 'dropdown')} onClick={toggleActive}>
+    <div className={classnames(style.container)}>
+      <button
+        className={classnames('input', style.dropdown)}
+        onClick={toggleActive}
+      >
         {currentSelection}
       </button>
 

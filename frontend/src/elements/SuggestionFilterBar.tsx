@@ -7,7 +7,6 @@ import Button from '../ui/Button';
 import Plus from '../svg/Plus';
 import { SortOption } from '../ui/SortSelector';
 
-const cx = classnames.bind(style);
 
 interface SuggestionFilterBarProps {
   count: number;
@@ -20,9 +19,9 @@ function SuggestionFilterBar({
   currentSelection = 'Most Comments',
 }: SuggestionFilterBarProps) {
   return (
-    <div className={cx('card', 'filterbar')}>
+    <div className={classnames('card', style.filterbar)}>
       <Suggestions />
-      <span className={cx('count')}>{count} Suggestions</span>
+      <span className={classnames(style.count)}>{count} Suggestions</span>
       <SortSelector
         handleChange={setFilter}
         fieldName="currentFilter"

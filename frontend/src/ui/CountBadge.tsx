@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Badge from './Badge';
 import Arrow from '../svg/Arrow';
 
-const cx = classnames.bind(style);
+// const cx = classnames.bind(style);
 
 interface CountBadgeProps {
   /**
@@ -23,9 +23,9 @@ interface CountBadgeProps {
 function CountBadge({ count, active = false }: CountBadgeProps) {
   return (
     <Badge active={active}>
-      <div className={cx('stack')}>
+      <div className={classnames(style.stack)}>
         <Arrow direction="up" />
-        <span className={cx('digits', { active: active })}>{count}</span>
+        <span className={classnames(style.digits, { active: active })}>{count}</span>
       </div>
     </Badge>
   );

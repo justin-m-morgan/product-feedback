@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import style from './Badge.module.css';
 import classnames from 'classnames';
 
-const cx = classnames.bind(style);
+// const cx = classnames.bind(style);
 
 interface BadgeProps {
   /**
@@ -21,7 +21,7 @@ interface BadgeProps {
 }
 function Badge({ children, active = false }: BadgeProps) {
   return (
-    <button className={cx('badge', { active: active })}>{children}</button>
+    <button className={classnames(style.badge, { active: active })}>{children}</button>
   );
 }
 

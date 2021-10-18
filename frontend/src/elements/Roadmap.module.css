@@ -1,39 +1,39 @@
 .roadmap {
     color: var(--colors-grey-800--hsl)
 }
-.roadmap__heading {
+.heading {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
     color: var(--colors-grey-900--hsl)
 }
-.roadmap__entry {
+.entry {
     display: flex; 
     justify-content: space-between;
 }
 
-.roadmap__link {
+.link {
     color: var(--colors-blue-500--hsl);
 }
 
-.roadmap__dot {
+.dot {
     margin-right: 1rem;
 }
 
-.roadmap__entry:nth-of-type(2) .roadmap__dot {
+.entries .entry:nth-of-type(1) .dot {
     fill: var(--colors-peach--hsl);
 }
-.roadmap__entry:nth-of-type(3) .roadmap__dot {
+.entries .entry:nth-of-type(2) .dot {
     fill: var(--colors-purple--hsl);
 }
-.roadmap__entry:nth-of-type(4) .roadmap__dot {
+.entries .entry:nth-of-type(3) .dot {
     fill: var(--colors-blue-300--hsl);
 }
-.roadmap__entry:nth-of-type(5) .roadmap__dot {
+.entries .entry:nth-of-type(4) .dot {
     fill: var(--colors-green--hsl);
 }
 
-.roadmap__count {
+.count {
     margin-right: 0;
     text-align: right;
     font-weight: bold;

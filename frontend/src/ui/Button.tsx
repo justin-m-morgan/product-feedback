@@ -9,7 +9,7 @@ export const ButtonOptions = {
   red: style.red,
   ghost: style.ghost,
 };
-const cx = classnames.bind(style);
+// const cx = classnames.bind(style);
 
 interface ButtonProps {
   /**
@@ -26,7 +26,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 function Button({ children, kind = 'purple' }: ButtonProps) {
-  return <button className={cx('button', kind)}>{children}</button>;
+  return <button className={classnames(style.button, ButtonOptions[kind])}>{children}</button>;
 }
 
 export default Button;

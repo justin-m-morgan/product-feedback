@@ -7,8 +7,6 @@ import SelectOptions, {
   SelectOptionProps,
 } from '../forms/SelectOptions';
 
-const cx = classnames.bind(style);
-
 
 export type SortOption =
   | 'Most Upvotes'
@@ -57,10 +55,10 @@ function SortSelector({
   };
 
   return (
-    <div className={cx('sortselector__container')}>
-      <button className={cx('sortbutton')} onClick={toggleActive}>
-        <span className={cx('sortbutton__label')}>Sort by:</span>
-        <span className={cx('sortbutton__option')}>{currentSelection}</span>
+    <div className={classnames(style.container)}>
+      <button className={classnames(style.sortbutton)} onClick={toggleActive}>
+        <span className={classnames(style.label)}>Sort by:</span>
+        <span className={classnames(style.option)}>{currentSelection}</span>
         <Arrow />
       </button>
       <SelectOptions

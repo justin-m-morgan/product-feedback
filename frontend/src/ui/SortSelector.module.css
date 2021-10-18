@@ -1,7 +1,7 @@
-.sortselector__container {
+.container {
     position: relative;
 }
-.sortselector__container fieldset {
+.container fieldset {
     position: absolute;
     left: 0;
     right: 0;
@@ -19,11 +19,11 @@
     cursor: pointer;
 }
 
-.sortbutton__label {
+.label {
     padding-right: 0.5rem;
     font-weight: 200;
 }
-.sortbutton__option { 
+.option { 
     font-weight: 800;
     padding-right: 0.5rem;
 }
