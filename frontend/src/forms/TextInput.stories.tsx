@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof TextInput>;
 
 const Template: ComponentStory<typeof TextInput> = (args) => (
-  <TextInput {...args} />
+  <div className="card">
+    <TextInput {...args} />
+  </div>
 );
 
 export const Primary = Template.bind({});
