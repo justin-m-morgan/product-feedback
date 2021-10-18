@@ -1,10 +1,9 @@
 import React from 'react';
 import style from './SuggestionCard.module.css';
 import classnames from 'classnames';
-import CountBadge from '../ui/CountBadge';
-import { Category } from './CategoryFilter';
-import Badge from '../ui/Badge';
-
+import CountBadge from '../CountBadge/CountBadge';
+import { Category } from '../CategoryFilter/CategoryFilter';
+import Badge from '../Badge/Badge';
 
 interface SuggestionCardProps {
   title: string;

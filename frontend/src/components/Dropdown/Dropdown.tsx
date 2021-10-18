@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classnames from 'classnames';
 
 import style from './Dropdown.module.css';
-import SelectOptions from './SelectOptions';
+import SelectOptions from '../SelectOptions/SelectOptions';
 
 interface Option {
   label: string;

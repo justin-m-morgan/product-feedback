@@ -1,8 +1,7 @@
 import React from 'react';
 import style from './CategoryFilter.module.css';
 import classnames from 'classnames';
-import Badge from '../ui/Badge';
-
+import Badge from '../Badge/Badge';
 
 export enum Category {
   All = 'All',

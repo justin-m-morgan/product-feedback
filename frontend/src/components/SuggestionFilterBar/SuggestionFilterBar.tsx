@@ -1,12 +1,11 @@
 import React from 'react';
 import style from './SuggestionFilterBar.module.css';
 import classnames from 'classnames';
-import Suggestions from '../svg/Suggestions';
-import SortSelector from '../ui/SortSelector';
-import Button from '../ui/Button';
-import Plus from '../svg/Plus';
-import { SortOption } from '../ui/SortSelector';
-
+import Suggestions from '../../svg/Suggestions';
+import SortSelector from '../SortSelector/SortSelector';
+import Button from '../Button/Button';
+import Plus from '../../svg/Plus';
+import { SortOption } from '../SortSelector/SortSelector';
 
 interface SuggestionFilterBarProps {
   count: number;
