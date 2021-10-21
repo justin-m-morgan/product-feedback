@@ -21,7 +21,7 @@
 }
 
 .options input[type="radio"]:checked + .option::after {
-    content: url("../../assets/shared/icon-check.svg");
+    content: url("../../../assets/shared/icon-check.svg");
     float: right;
 }
 

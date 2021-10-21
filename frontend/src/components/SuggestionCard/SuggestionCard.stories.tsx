@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import SuggestionCard from './SuggestionCard';
-import { Category } from './CategoryFilter';
+import { Category } from '../CategoryFilter/CategoryFilter';
 export default {
   title: 'Elements/Suggestion Card',
   component: SuggestionCard,

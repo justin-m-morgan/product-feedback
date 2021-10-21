@@ -23,7 +23,7 @@
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
-    content: url(../../assets/shared/icon-comments.svg);
+    content: url(../../../assets/shared/icon-comments.svg);
     padding-right: 0.5rem;
     
 }

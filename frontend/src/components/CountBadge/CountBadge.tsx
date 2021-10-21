@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import style from './CountBadge.module.css';
 import classnames from 'classnames';
-import Badge from './Badge';
-import Arrow from '../svg/Arrow';
+import Badge from '../Badge/Badge';
+import Arrow from '../../svg/Arrow';
 
 // const cx = classnames.bind(style);
 

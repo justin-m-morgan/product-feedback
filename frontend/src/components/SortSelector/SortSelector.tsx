@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import style from './SortSelector.module.css';
 import classnames from 'classnames';
-import Arrow from '../svg/Arrow';
+import Arrow from '../../svg/Arrow';
 import SelectOptions, {
   Option,
   SelectOptionProps,
-} from '../forms/SelectOptions';
+} from '../SelectOptions/SelectOptions';
 
 
 export type SortOption =

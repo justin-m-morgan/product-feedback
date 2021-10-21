@@ -3,7 +3,7 @@ import style from './SuggestionsEmptyState.module.css';
 import Button from '../Button/Button';
 import Plus from '../../svg/Plus';
 
-import emptyImg from '../../assets/suggestions/illustration-empty.svg';
+import emptyImg from '../../../assets/suggestions/illustration-empty.svg';
 import classnames from 'classnames';
 
 interface SuggestionsEmptyStateProps {}

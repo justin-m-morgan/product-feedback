@@ -1,5 +1,5 @@
 .container {
-    background-image: url(../../assets/suggestions/desktop/background-header.png);
+    background-image: url(../../../assets/suggestions/desktop/background-header.png);
     background-size: cover;
     color: var(--colors-white--hsl);
     display: flex;
