@@ -2,12 +2,7 @@ import React from 'react';
 import style from './Roadmap.module.css';
 import classnames from 'classnames';
 
-export enum Status {
-  Suggestion = 'Suggestion',
-  Planned = 'Planned',
-  InProgress = 'In Progress',
-  Live = 'Live',
-}
+import { Status } from '../../types/Request.interface';
 interface DotProps {
   height: string;
 }
@@ -25,7 +20,7 @@ function Roadmap({}: RoadmapProps) {
     <div className={classnames('card', style.roadmap)}>
       <div className={classnames(style.heading)}>
         <h3 className="h3">Roadmap</h3>
-        <a href="/" className={classnames(style.link)}>
+        <a href="/" className={classnames('link')}>
           View
         </a>
       </div>
