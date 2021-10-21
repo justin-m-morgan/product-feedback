@@ -1,3 +1,58 @@
 .comment {
-    background-color: green;
+    display: grid; 
+    grid-template-columns: 1fr 8fr 2fr;
+    grid-template-areas: 
+        "avatar user_info reply_button"
+        "avatar content content"
+        "avatar reply_text_area post_reply_button";
+    gap: 1rem;
+}
+
+.avatar {
+    grid-area: avatar;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.avatar img {
+    object-fit: cover;
+}
+
+.user_info {
+    grid-area: user_info;
+}
+.name {
+    font-weight: bold;
+}
+.username {
+    color: var(--colors-grey-800--hsl);
+}
+
+
+.reply_button {
+    grid-area: reply_button;
+    justify-self: end;
+    cursor: pointer;
+}
+.content {
+    grid-area: content;
+    color: var(--colors-grey-800--hsl);
+}
+.replyTo {
+    font-weight: bold;
+    color: var(--colors-purple--hsl);
+}
+
+.reply_text_area  {
+    grid-area: reply_text_area;
+}
+.reply_text_area > textarea {
+    width: 100%;
+    min-height: 15ch;
+}
+.post_reply_button {
+    grid-area: post_reply_button;
+    justify-self: end;
 }

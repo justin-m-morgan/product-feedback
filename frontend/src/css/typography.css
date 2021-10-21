@@ -47,3 +47,7 @@ body {
     font-size: 0.8125rem;
     line-height: 1.1875rem;
 }
+
+.link {
+    color: var(--colors-blue-500--hsl);
+}

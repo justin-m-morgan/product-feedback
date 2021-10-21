@@ -1,18 +1,22 @@
-input, select, .input {
+input, select, textarea, .input {
     background-color: var(--colors-grey-100--hsl);
     padding: 0.8125rem 1.5rem;
+    width: 100%;
     border-radius: 0.3125rem;
     outline-width: 1px;
     outline-style: inset;
     outline-color: transparent;
+    border: none;
 }
 
+textarea {
+    min-height: 6rem;
+}
 
-
-input:active, input:focus {
+input:active, input:focus, textarea:focus {
     outline-color: var(--colors-blue-500--hsl);
 }
 
-input.error {
+input.error, textarea.error {
     outline-color: var(--colors-red--hsl);
 }
