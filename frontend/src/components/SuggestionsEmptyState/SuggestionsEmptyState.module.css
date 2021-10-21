@@ -1,0 +1,21 @@
+.container {
+ display: flex; 
+ flex-direction: column;
+ justify-content: center; 
+ align-items: center;
+ padding: 6.8rem 0;
+}
+
+.illustration {
+    margin-bottom: 3.5rem;
+}
+.pseudoheading {
+    color: var(--colors-blue-800--hsl);
+    padding-bottom: 1rem;
+}
+
+.text {
+    max-width: 45ch;
+    text-align: center;
+    padding-bottom: 3rem;
+}

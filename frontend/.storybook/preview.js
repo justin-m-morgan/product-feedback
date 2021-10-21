@@ -10,6 +10,10 @@ export const parameters = {
         name: 'light-gray',
         value: 'hsl(231, 100%, 97%)',
       },
+      {
+        name: 'off-white',
+        value: 'hsl(231, 100%, 99%)',
+      },
     ],
   },
   controls: {

@@ -1,0 +1,10 @@
+.Link {
+    color: var(--colors-grey-800--hsl);
+    font-weight: bold;
+    font-size: 0.875rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}

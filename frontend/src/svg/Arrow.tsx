@@ -3,8 +3,8 @@ import classnames from 'classnames';
 
 export const Direction = {
   up: 'rotate-half',
-  left: 'rotate-ccw',
-  right: 'rotate-cw',
+  left: 'rotate-cw',
+  right: 'rotate-ccw',
   down: '',
 };
 

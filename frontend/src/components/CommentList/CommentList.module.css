@@ -1,0 +1,15 @@
+.commentCount {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.125rem;
+    padding-bottom: 2rem;
+}
+
+
+.commentList > *:not(:last-child)::after {
+    content: "";
+    padding-bottom: 1rem;
+    margin-bottom: 2.0625rem;
+    display: block;
+    border-bottom: 3px solid var(--colors-grey-100--hsl);
+}

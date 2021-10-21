@@ -1,8 +1,0 @@
-.container {
-    background-image: url(../../assets/suggestions/desktop/background-header.png);
-    background-size: cover;
-    color: var(--colors-white--hsl);
-    display: flex;
-    flex-direction: column;
-    padding-top: 3.875rem;
-}

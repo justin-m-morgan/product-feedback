@@ -1,0 +1,27 @@
+.options {
+    overflow: hidden;
+    border-radius: 0.3125rem;
+    display: grid; 
+    gap: 2px;
+    background-color: var(--colors-grey-100--hsl);
+    box-shadow: var(--shadow-md);
+    transition: var(--trans-fade);  
+}
+.options input[type="radio"] {
+    display: none;
+}
+
+.option {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--colors-white--hsl);
+}
+
+.option:hover {
+    color: var(--colors-purple--hsl);
+}
+
+.options input[type="radio"]:checked + .option::after {
+    content: url("../../../assets/shared/icon-check.svg");
+    float: right;
+}
+

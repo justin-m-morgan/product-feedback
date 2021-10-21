@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+    display: block;
+}
+
+.container .options {
+    position: relative;
+    width: 100%;
+    top: 1rem;
+}
+
+.dropdown {
+    display: block;
+    width: 100%;
+    background-image: url("../../../assets/shared/icon-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: top 50% right 1.5rem;
+    background-size: 0.7rem;
+    text-align: left;
+    cursor: pointer;
+}

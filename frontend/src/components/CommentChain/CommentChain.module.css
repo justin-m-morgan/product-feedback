@@ -1,0 +1,11 @@
+.CommentChain {}
+
+.comment {
+    margin-bottom: 2rem;
+}
+
+.replies {
+    display: grid;
+    gap: 2rem;
+    padding-left: 4rem;
+}
