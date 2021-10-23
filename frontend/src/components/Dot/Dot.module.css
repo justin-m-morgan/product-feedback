@@ -1,0 +1,4 @@
+.dot {
+    margin-right: 1rem;
+    fill: var(--accent-color, black);
+}
