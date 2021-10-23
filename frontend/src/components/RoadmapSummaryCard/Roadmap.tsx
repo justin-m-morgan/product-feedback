@@ -3,16 +3,7 @@ import style from './Roadmap.module.css';
 import classnames from 'classnames';
 
 import { Status } from '../../types/Request.interface';
-interface DotProps {
-  height: string;
-}
-function Dot({ height }: DotProps) {
-  return (
-    <svg className={classnames(style.dot)} height={height} viewBox="0 0 10 10">
-      <circle cx="5" cy="5" r="5" />
-    </svg>
-  );
-}
+import Dot from '../Dot/Dot';
 
 interface RoadmapProps {}
 function Roadmap({}: RoadmapProps) {
@@ -28,7 +19,7 @@ function Roadmap({}: RoadmapProps) {
         {Object.entries(Status).map(([key, value]) => (
           <div className={classnames(style.entry)} key={key}>
             <div className={classnames(style.labels)}>
-              <Dot height="0.625rem" />
+              <Dot />
               <span>{value}</span>
             </div>
 

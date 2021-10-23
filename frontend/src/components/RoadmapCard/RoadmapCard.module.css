@@ -1,0 +1,53 @@
+.RoadmapCard {
+    --accent-color: var(--category-color, pink);
+    position: relative;
+    overflow: hidden;
+}
+.RoadmapCard::before {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 6px;
+    background-color: var(--accent-color);
+}
+
+.status__container {
+    display: flex;
+    align-items: center; 
+    padding-bottom: 0.5rem;
+}
+.status__label {
+    color: var(--colors-grey-800--hsl);
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+.description {
+    color: var(--colors-grey-800--hsl);
+    padding-bottom: 1rem;
+}
+
+.category {
+    padding-bottom: 1rem;
+}
+
+.countContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upvotes {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+}
+
+.upvotes > .count { 
+    color: var(--colors-grey-900--hsl);
+}

@@ -1,0 +1,7 @@
+.RoadmapColumnHeader {}
+
+.label {font-weight: bold;}
+.count {}
+.subtitle {
+    color: var(--colors-grey-800--hsl);
+}
