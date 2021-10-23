@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import CountBadge from '../CountBadge/CountBadge';
 import { Category } from '../CategoryFilter/CategoryFilter';
 import Badge from '../Badge/Badge';
+import CommentCount from '../CommentCount/CommentCount';
 
 interface SuggestionCardProps {
   title: string;
@@ -29,8 +30,8 @@ function SuggestionCard({
       <div className={classnames(style.category)}>
         <Badge>{Category[category]}</Badge>
       </div>
-      <div className={classnames(style.comments, { zero: commentCount == 0 })}>
-        {commentCount}
+      <div className={style.comments}>
+        <CommentCount commentCount={commentCount} />
       </div>
     </div>
   );

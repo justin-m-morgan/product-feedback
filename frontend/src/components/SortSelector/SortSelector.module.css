@@ -15,6 +15,7 @@
     align-items: center;
     padding: 1rem 1.1rem;
     border-radius: 0.625rem;
+    font-size: 0.875rem;
     color: var(--colors-white--hsl);
     cursor: pointer;
 }
