@@ -1,0 +1,42 @@
+.FormTemplate {
+    padding-top: 1.4rem;
+}
+.container {
+    padding: 3.25rem 2.625rem;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -1.75rem;
+    left: 2.625rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 100%;
+    background: rgb(232,77,112);
+    background: radial-gradient(circle, rgba(232,77,112,1) 0%, rgba(163,55,246,1) 50%, rgba(40,167,237,1) 100%) no-repeat 0% 100%/200% 200%;
+}
+
+.icon svg {
+    height: 1rem;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.inputs { 
+    display: grid;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.container__buttons {
+    display: flex; 
+    justify-content: flex-end;
+    gap: 1rem;
+}

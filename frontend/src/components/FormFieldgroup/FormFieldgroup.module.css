@@ -1,0 +1,20 @@
+.FormFieldgroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.FormFieldgroup > *:last-child {
+    margin-top: 1rem;
+}
+
+.label {
+    font-weight: bold;
+    letter-spacing: -0.19px;
+    letter-spacing: -0.19px;
+    font-size: 0.875rem;
+}
+.instructions {
+    font-size: 0.875rem;
+    color: var(--colors-grey-800--hsl);
+
+}
