@@ -30,19 +30,19 @@ export class User {
   @Column()
   image: string;
 
-  @Field((type) => [Request])
+  @Field(() => [Request])
   @OneToMany(() => Request, (request) => request.user)
   requests: Request[];
 
-  @Field((type) => [Comment])
-  @OneToMany((type) => Comment, (comment) => comment.user)
+  @Field(() => [Comment])
+  @OneToMany(() => Comment, (comment) => comment.user)
   comments: Comment[];
 
-  @Field((type) => [Reply])
-  @OneToMany((type) => Reply, (reply) => reply.user)
+  @Field(() => [Reply])
+  @OneToMany(() => Reply, (reply) => reply.user)
   replies: Reply[];
 
-  @Field((type) => [Request], { nullable: true })
+  @Field(() => [Request], { nullable: true })
   @ManyToMany(() => Request, (request) => request.upvotes)
   @JoinTable({ name: 'upvotes' })
   upvotes: Request[];

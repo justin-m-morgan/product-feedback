@@ -13,9 +13,9 @@ export class UpdateRequestInput extends PartialType(CreateRequestInput) {
   @Field()
   description: string;
 
-  @Field((type) => Category)
+  @Field(() => Category)
   category: Category;
 
-  @Field((type) => Status)
+  @Field(() => Status)
   status: Status;
 }

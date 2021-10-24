@@ -11,7 +11,6 @@ import { CommentService } from './comment.service';
 import { Comment } from './entities/comment.entity';
 import { CreateCommentInput } from './dto/create-comment.input';
 import { UpdateCommentInput } from './dto/update-comment.input';
-import { User } from '../user/entities/user.entity';
 import { Reply } from '../reply/entities/reply.entity';
 import { ReplyService } from '../reply/reply.service';
 

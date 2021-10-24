@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateCommentInput } from './dto/create-comment.input';
-import { UpdateCommentInput } from './dto/update-comment.input';
+// import { UpdateCommentInput } from './dto/update-comment.input';
 import { Comment } from './entities/comment.entity';
 
 @Injectable()
@@ -12,7 +12,7 @@ export class CommentService {
   ) {}
 
   create(createCommentInput: CreateCommentInput) {
-    let comment = this.commentsRepository.create(createCommentInput);
+    const comment = this.commentsRepository.create(createCommentInput);
     return this.commentsRepository.save(comment);
   }
 
@@ -29,11 +29,11 @@ export class CommentService {
     });
   }
 
-  update(id: number, updateCommentInput: UpdateCommentInput) {
-    return `This action updates a #${id} comment`;
-  }
+  // update(id: number, updateCommentInput: UpdateCommentInput) {
+  //   return `This action updates a #${id} comment`;
+  // }
 
-  remove(id: number) {
-    return `This action removes a #${id} comment`;
-  }
+  // remove(id: number) {
+  //   return `This action removes a #${id} comment`;
+  // }
 }

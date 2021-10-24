@@ -48,15 +48,15 @@ describe('UserResolver', () => {
 
   describe('findAll', () => {
     it('should return an array of users', async () => {
-      let allUsers = await resolver.findAll();
+      const allUsers = await resolver.findAll();
 
       expect(allUsers).toHaveLength(mockAllUsers.length);
     });
   });
   describe('findOne', () => {
     it('should return a single of user', async () => {
-      let testId = 1;
-      let foundUser = await resolver.findOne(testId);
+      const testId = 1;
+      const foundUser = await resolver.findOne(testId);
 
       expect(foundUser).toHaveProperty('name');
       expect(foundUser).toHaveProperty('username');
@@ -65,9 +65,9 @@ describe('UserResolver', () => {
   });
   describe('createUser', () => {
     it('should create a user', async () => {
-      let createUserInputs = createUserFactory();
-      let createdUser = await resolver.createUser(createUserInputs);
-      let modelUser = {
+      const createUserInputs = createUserFactory();
+      const createdUser = await resolver.createUser(createUserInputs);
+      const modelUser = {
         ...createUserInputs,
         replies: [],
         comments: [],
@@ -80,15 +80,15 @@ describe('UserResolver', () => {
   });
   describe('updateUser', () => {
     it('should update a user', async () => {
-      let mockUser = completeUserFactory();
-      let newUserProps = createUserFactory();
-      let userToUpdate = {
+      const mockUser = completeUserFactory();
+      const newUserProps = createUserFactory();
+      const userToUpdate = {
         id: mockUser.id,
         name: newUserProps.name,
         username: newUserProps.username,
         image: newUserProps.image,
       };
-      let updatedUser = await resolver.updateUser(userToUpdate);
+      const updatedUser = await resolver.updateUser(userToUpdate);
 
       expect(updatedUser).toHaveProperty('name', newUserProps.name);
       expect(updatedUser).toHaveProperty('username', newUserProps.username);
@@ -96,4 +96,3 @@ describe('UserResolver', () => {
     });
   });
 });
-

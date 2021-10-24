@@ -5,9 +5,9 @@ export class CreateReplyInput {
   @Field()
   content: string;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   commentId: number;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   userId: number;
 }

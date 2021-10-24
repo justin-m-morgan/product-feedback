@@ -7,12 +7,12 @@ import {
   Repository,
 } from 'typeorm';
 import { Request } from './entities/request.entity';
-import { getRepositoryToken, TypeOrmModule } from '@nestjs/typeorm';
+import { getRepositoryToken } from '@nestjs/typeorm';
 import { requestFactory } from './request.factory';
 
 describe('RequestService', () => {
   let service: RequestService;
-  let repository: Repository<Request>;
+  // let repository: Repository<Request>;
   const testConnectionName = 'testConnection';
 
   beforeEach(async () => {
@@ -26,7 +26,7 @@ describe('RequestService', () => {
       ],
     }).compile();
 
-    let connection = await createConnection({
+    const connection = await createConnection({
       type: 'better-sqlite3',
       database: ':memory:',
       dropSchema: true,
@@ -36,9 +36,9 @@ describe('RequestService', () => {
       name: testConnectionName,
     });
 
-    let repository = getRepository(Request, testConnectionName);
+    const repository = getRepository(Request, testConnectionName);
     service = new RequestService(repository);
-    // service = module.get<RequestService>(RequestService);
+    service = module.get<RequestService>(RequestService);
     return connection;
   });
 
@@ -58,10 +58,10 @@ describe('RequestService', () => {
 });
 
 function insertMocks(testConnectionName) {
-  let repository = getRepository(Request, testConnectionName);
+  const repository = getRepository(Request, testConnectionName);
 
   Array(10).forEach((_, index) => {
-    let mockRequest = requestFactory({ id: index + 1 });
+    const mockRequest = requestFactory({ id: index + 1 });
     repository.insert(mockRequest);
   });
 }

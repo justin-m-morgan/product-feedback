@@ -9,12 +9,12 @@ export class CreateRequestInput {
   @Field()
   description: string;
 
-  @Field((type) => Category)
+  @Field(() => Category)
   category: Category;
 
-  @Field((type) => Status)
+  @Field(() => Status)
   status: Status;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   userId: number;
 }

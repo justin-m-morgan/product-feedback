@@ -11,9 +11,6 @@ import { RequestModule } from './request/request.module';
 import { CommentModule } from './comment/comment.module';
 import { ReplyModule } from './reply/reply.module';
 
-
-
-
 const schemaDirectory = join(process.cwd(), 'src/schema.gql');
 
 @Module({

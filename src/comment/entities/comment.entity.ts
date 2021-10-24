@@ -21,23 +21,23 @@ export class Comment {
   @Column()
   content: string;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   @Column()
   requestId: number;
 
-  @Field((type) => Request)
-  @ManyToOne((type) => Request, (request) => request.comments)
+  @Field(() => Request)
+  @ManyToOne(() => Request, (request) => request.comments)
   request: Request;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   @Column()
   userId: number;
 
-  @Field((type) => User)
-  @ManyToOne((type) => User, (user) => user.comments)
+  @Field(() => User)
+  @ManyToOne(() => User, (user) => user.comments)
   user: number;
 
-  @Field((type) => [Reply])
-  @OneToMany((type) => Reply, (reply) => reply.comment)
+  @Field(() => [Reply])
+  @OneToMany(() => Reply, (reply) => reply.comment)
   replies: Reply[];
 }

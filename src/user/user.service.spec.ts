@@ -31,5 +31,3 @@ describe('UserRepo (Mocked)', () => {
     expect(typeof repo.find).toBe('function');
   });
 });
-
-

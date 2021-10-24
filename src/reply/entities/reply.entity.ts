@@ -14,19 +14,19 @@ export class Reply {
   @Column()
   content: string;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   @Column()
   commentId: number;
 
-  @Field((type) => Comment)
-  @ManyToOne((type) => Comment, (comment) => comment.replies)
+  @Field(() => Comment)
+  @ManyToOne(() => Comment, (comment) => comment.replies)
   comment: Comment;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   @Column()
   userId: number;
 
-  @Field((type) => User)
-  @ManyToOne((type) => User, (user) => user.replies)
+  @Field(() => User)
+  @ManyToOne(() => User, (user) => user.replies)
   user: User;
 }

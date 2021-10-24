@@ -45,11 +45,11 @@ export class Request {
   @Column()
   description: string;
 
-  @Field((type) => Category)
+  @Field(() => Category)
   @Column()
   category: Category;
 
-  @Field((type) => Status)
+  @Field(() => Status)
   @Column()
   status: Status;
 
@@ -62,10 +62,10 @@ export class Request {
   user: User;
 
   @Field(() => [Comment])
-  @OneToMany((type) => Comment, (comment) => comment.request)
+  @OneToMany(() => Comment, (comment) => comment.request)
   comments: Comment[];
 
-  @Field((type) => [User], { nullable: true })
-  @ManyToMany((type) => User, (user) => user.upvotes, { eager: true })
+  @Field(() => [User], { nullable: true })
+  @ManyToMany(() => User, (user) => user.upvotes, { eager: true })
   upvotes: User[];
 }

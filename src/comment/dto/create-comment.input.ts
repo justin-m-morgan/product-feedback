@@ -5,9 +5,9 @@ export class CreateCommentInput {
   @Field()
   content: string;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   requestId: number;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   userId: number;
 }

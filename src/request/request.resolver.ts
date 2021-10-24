@@ -12,7 +12,6 @@ import { Request } from './entities/request.entity';
 import { CreateRequestInput } from './dto/create-request.input';
 import { UpdateRequestInput } from './dto/update-request.input';
 import { CommentService } from '../comment/comment.service';
-import { User } from '../user/entities/user.entity';
 import { Comment } from '../comment/entities/comment.entity';
 
 @Resolver(() => Request)
