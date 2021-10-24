@@ -6,7 +6,7 @@ import { Category } from '../CategoryFilter/CategoryFilter';
 import Badge from '../Badge/Badge';
 import CommentCount from '../CommentCount/CommentCount';
 
-interface SuggestionCardProps {
+export interface SuggestionCardProps {
   title: string;
   description: string;
   category: Category;

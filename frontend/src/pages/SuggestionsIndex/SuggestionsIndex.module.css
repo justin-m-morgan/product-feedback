@@ -1,0 +1,21 @@
+.SuggestionsIndex {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 1.875rem;
+}
+
+.header, .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+
+.index__container { 
+    display: flex; 
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.categoryfilter {
+    padding-bottom: 0.25rem;
+}

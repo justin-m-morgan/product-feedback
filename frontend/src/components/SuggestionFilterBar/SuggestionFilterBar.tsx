@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 import Plus from '../../svg/Plus';
 import { SortOption } from '../SortSelector/SortSelector';
 
-interface SuggestionFilterBarProps {
+export interface SuggestionFilterBarProps {
   count: number;
   currentSelection: SortOption;
   setFilter: () => void;

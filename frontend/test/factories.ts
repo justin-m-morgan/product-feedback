@@ -19,8 +19,8 @@ export const userFactory = Factory.define<User>(({ sequence }) => ({
 export const requestFactory = Factory.define<Request>(
   ({ associations, sequence }) => ({
     id: sequence,
-    title: Faker.company.catchPhraseDescriptor(),
-    description: '',
+    title: Faker.company.catchPhrase(),
+    description: Faker.lorem.paragraph(),
     category: Faker.random.arrayElement([
       Category.Bug,
       Category.Enhancement,
@@ -33,6 +33,7 @@ export const requestFactory = Factory.define<Request>(
       Status.Suggestion,
     ]),
     upvotes: [],
+    comments: [],
     user: associations.user || userFactory.build(),
   }),
 );

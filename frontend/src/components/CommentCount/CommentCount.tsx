@@ -8,7 +8,9 @@ interface CommentCountProps {
 function CommentCount({ commentCount }: CommentCountProps) {
   return (
     <div
-      className={classnames(style.CommentCount, { zero: commentCount == 0 })}
+      className={classnames(style.CommentCount, {
+        [style['zero']]: commentCount == 0,
+      })}
     >
       {commentCount}
     </div>
