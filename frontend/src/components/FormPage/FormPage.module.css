@@ -1,0 +1,11 @@
+.FormPage {
+    margin: 0 auto;
+    max-width: 34rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.backlink {
+    margin-bottom: 2rem;
+}

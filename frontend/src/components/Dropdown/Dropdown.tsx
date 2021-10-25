@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import style from './Dropdown.module.css';
 import SelectOptions from '../SelectOptions/SelectOptions';
 
-interface Option {
+export interface Option {
   label: string;
   value: any;
 }
@@ -39,13 +39,14 @@ function Dropdown({
       >
         {currentSelection}
       </button>
-
-      <SelectOptions
-        options={options}
-        fieldName={fieldName}
-        hidden={!isActive}
-        handleClick={handleClick}
-      />
+      <div className={style.options}>
+        <SelectOptions
+          options={options}
+          fieldName={fieldName}
+          hidden={!isActive}
+          handleClick={handleClick}
+        />
+      </div>
     </div>
   );
 }

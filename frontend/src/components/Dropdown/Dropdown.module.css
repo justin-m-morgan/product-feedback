@@ -4,9 +4,10 @@
 }
 
 .container .options {
-    position: relative;
+    position: absolute;
     width: 100%;
-    top: 1rem;
+    top: 4rem;
+    color: var(--colors-grey-800--hsl);
 }
 
 .dropdown {
@@ -18,4 +19,5 @@
     background-size: 0.7rem;
     text-align: left;
     cursor: pointer;
+    font-size: 0.9375rem;
 }

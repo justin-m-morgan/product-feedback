@@ -22,3 +22,8 @@ export default interface Request {
   upvotes: User[];
   user: User;
 }
+
+export const categoryOptions = Object.entries(Category).map(([key, value]) => ({
+  value: key,
+  label: value,
+}));

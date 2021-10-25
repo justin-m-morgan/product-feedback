@@ -9,8 +9,7 @@
 
 .label {
     font-weight: bold;
-    letter-spacing: -0.19px;
-    letter-spacing: -0.19px;
+    letter-spacing: 0.19px;
     font-size: 0.875rem;
 }
 .instructions {
